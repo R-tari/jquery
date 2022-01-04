@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+</head>
+<body>
+    <h1>
+        직접선택자
+    </h1>
+
+    <sction class="sec sec01" id="food01" >
+        <h2>자장면</h2>
+        <ul>
+            <li>자장면</li>
+            <li>삼선자장면</li>
+            <li>간자장면</li>
+            <li>유니자장면</li>
+        </ul>
+    </sction>
+    <sction class="sec sec02" id="food02">
+        <h2>짬뽕</h2>
+        <ul>
+            <li>짱뽕</li>
+            <li>삼선짬뽕</li>
+            <li>굴짬뽕</li>
+            <li>차돌짬뽕</li>
+        </ul>
+    </sction>
+    <script src="/js/jquery-3.6.0.js"></script>
+    
+    <script>
+        $(function()
+        {
+            $(function(){
+            // 테그(요소) 선택자
+            $('h1').css({
+                'text-align':'center',
+                textAlign:'center',
+            })
+            
+            // 아이디 선택자
+            $('#food02').css({
+                color:'green',
+            })
+            // 클래스 선택자
+            $('.sec').css({
+                color:'red',
+            })
+            $('li:first-child').css({
+                color:'blue',
+            })
+            $('li:nth-child(2n').css({
+                color:'cyan',
+            })
+            // $('.sec01::before').css({
+            //     fontSize:'100px',
+            // })
+        })
+        })
+    </script>
+</body>
+</html>

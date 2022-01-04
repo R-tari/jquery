@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접요소 선택자</title>
+</head>
+
+<h1>
+    인접요소 선택자
+</h1>
+<body>
+    <sction class="sec sec01" id="food01" >
+    <h2>자장면</h2>
+    <ul>
+        <li>자장면</li>
+        <li>삼선자장면</li>
+        <li>간자장면</li>
+        <li id="ja04">유니자장면</li>
+    </ul>
+</sction>
+<sction class="sec sec02" id="food02">
+    <h2>짬뽕</h2>
+    <ul>
+        <li>짱뽕</li>
+        <li>삼선짬뽕</li>
+        <li id="jjam03">굴짬뽕</li>
+        <li>차돌짬뽕</li>
+    </ul>
+</sction>
+
+<section class="sec sec03" id="food03">
+    <div>
+        <div>
+            <ul>
+                <lu>
+                    1
+                    <ul>
+                        <lu>1-1</lu>
+                        <lu>1-2</lu>
+                        <lu>1-3</lu>
+                    </ul>
+                </lu>
+                <lu>2
+
+                </lu>
+                <lu>3</lu>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $('#food02>ul>li:nth-child(1)').css
+            (
+                {
+                    color:'red',
+                }
+            )
+            // 부모선택자(매서드)
+            $('#food02>ul>li:nth-child(1)').parent().css(
+                {
+                    border:'2px solid red',
+                }
+            )
+            $('#food01 li:last-child').css(
+                {
+                    color:'green',
+                }
+            )
+            // 조상선택
+            $('#food01 li:nth-child(1)').parents().css(
+                {
+                    border:'2px solid green',
+                })
+
+            $('#jjam03').css(
+                {
+                color:'blue',
+            })
+
+            // 이전선택자
+            $('#jjam03').prev().css(
+                {
+                    color:'blue',
+                }
+            )
+
+            // 이후선택자
+            $('#jjam03').next().css(
+                {
+                    color:'blue',
+                }
+            )
+
+            // 동생들 이후 선택자
+            $('#food01 li:nth-child(2)').nextAll().css(
+                {
+                    color:'cyan',
+                }
+            )
+            //  형들 이전 선택자
+            $('#jjam03').next().prevAll().css(
+                {
+                    color:'magenta',
+                }
+            )
+            // 다음요소의 범위
+            $('#food01 li:first-child').nextUntil('#ja04').css(
+                {
+                    color:'yellow',
+                }
+            )
+            // 이전요소의 범위
+            $('#food02 li:last-child').prevUntil('#food02 li:first-child').css(
+                {
+                    color:'red',
+                }
+            )
+
+            // 모든 형제요소
+            $('#jjam03').siblings().css(
+                {
+                    border:'1px solid black',
+                }
+            )
+
+            // $('#food01>ul>li')
+            $('#food01').children('ul').children('li').css(
+                {
+                    color:'black',
+                }
+            )
+
+            $('*').css(
+                {
+                    color:'black',
+                    border:'none',
+                }
+            )
+
+            // 가장 가까운 조상요소
+            $('#tri').closest('div')
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $(function()
+        {
+           console.log($('input').val);
+           $('input').val('이몽룡');
+
+
+           let linkUrl=$('a').attr('href');
+           linkUrl=linkUrl.replace('naver','googlr');
+           $('a').text('google').attr(
+               {
+                   href:'linkUrl',
+                   targer:'_self',
+               });
+
+            console.log($('img').attr('src'));
+
+            let imgSrc=$('img').attr('src');
+            console.log(imgSrc);
+            let nowDate=new Date();
+            let nowHour=nowDate.getHours();
+            let nowMinute=nowDate.getMinute();
+            console.log(nowHour);
+
+            if(nowHour>=18)
+            
+               imgSrc=imgSrc.replace('fran','sto');
+            else 
+                imgSrc=imgSrc.replace('sto','fran');
+
+            $('img').attr('src',imgSrc);            
+            
+        })
+    </script>
+</head>
+<body>
+    
+    <input type="text" value="홍길동">
+    <a href="https://www.naver.com">네이버</a>
+    <img src="./images/img-store.jpg" alt=" 이미지1">
+</body>
+</html>
