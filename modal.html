@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: red;
+        }
+        .modal
+        {
+            width:600px;
+            height:400px;
+            margin:100px auto;
+            border:1px solid black;
+            padding:20px;
+            border-radius: 20px;
+            background-color: #fff;
+            position:relative;
+        }
+        .btn-close
+        {
+            position:absolute;
+            right:20px;
+            top:20px;
+            width:40px;
+            height:40px;
+        }
+        .btn-close::before,.btn-close::after
+        {
+            content:'';
+            display:block;
+            height:4px;
+            background-color: #000;
+            position:absolute;
+            left:0;
+            right:0;
+            top:50%;
+            transform:rotate(45deg);
+        }
+        .btn-close::after
+        {
+            transform:rotate(-45deg);
+        }
+    </style>
+    <script src="js/jquery-3.6.0.js"></script>
+    <script>
+        $(function()
+        {
+            $('.btn-close').on(
+                {
+                    'click':function()
+                    {
+                        $('.modal').hide(0);
+                    }
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="modal">
+            <div class="btn-close"></div>
+            <h2>모달창</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ratione optio temporibus, similique harum aspernatur laboriosam tempore. Architecto magnam dolorem modi? Suscipit excepturi illum unde sint consequatur hic ea a.
+            Dolorum tenetur asperiores cum quisquam repudiandae doloremque accusamus fuga debitis. Nam commodi perspiciatis quam, harum ab eveniet repudiandae? Aliquam quam nisi recusandae quo minus molestias eveniet obcaecati iusto voluptatibus quis.
+            Sapiente, ipsam mollitia eius quos quia obcaecati velit ratione labore facilis vitae quam earum laborum tenetur non! Voluptate nobis placeat iste, quaerat facilis fugiat consectetur soluta natus earum rerum esse!
+            Minima nam quae maxime repellat veniam optio vero delectus dolor numquam odit autem quam, ipsam quisquam officia, quos iure, illo dolorem architecto error. Sapiente eveniet quod suscipit est iusto. Ducimus!
+            Inventore corporis dignissimos molestias officiis nihil expedita ipsa dolore aperiam tempora aliquam neque nostrum, ipsum explicabo iure. A consequatur nesciunt quisquam voluptatem, dicta eius? Eveniet, saepe. Sint odit a facere!
+            </p>
+        </div>
+    </div>
+    <!-- <script>
+        let modalWindow=document.querySelector('.modal');
+        let btnCloseWindow=document.querySelector('.btn-close');
+        btnCloseWindow.addEventListener('click',function()
+        {
+            modalWindow.style.display='none';
+        })
+        
+    </script> -->
+</body>
+</html>
